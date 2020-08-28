@@ -7,6 +7,10 @@ See https://projekt-sven.github.io/ for more Infos.
 You need to install followwed packages in FHEM:
 - FHEM Tablet UI (see https://wiki.fhem.de/wiki/FHEM_Tablet_UI)
 
+Installation:
+1.  Copy the content of this Repository into your Folder where you installed FHEM.
+2.  Run the Perlfunktion `Sven_init()` in FHEM.
+
 ## Automatisierung
 
 Die Automatisierung in FHEM ist über zwei Moduldateien definiert: eine für die LSF-Schnittstelle und eine für die eigentliche Automatisierung. In beiden Dateien sind verschiedene Perlfunktionen definiert, um die Automatisierung umzusetzen. Das System ist dabei so konzipiert, das die Anwendung für den Administrator so einfach wie möglich ist. Dieser muss zu Beginn nur die Funktion „Sven_init“ ausführen und kann danach über die Benutzeroberfläche mit dem System interagieren. 
