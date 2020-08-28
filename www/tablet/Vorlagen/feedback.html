@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+	<div class="gridster">
+		<ul>
+		
+			<li data-row="1" data-col="1" data-sizex="1" data-sizey="2" data-template="RaumNR/menu_RaumNR.html"> </li>
+
+			<li data-row="1" data-col="2" data-sizex="4" data-sizey="2" >
+			<div class="sheet">
+				<div class="row">
+					<div data-type="label" style="font-size:16px;" class="cell-60 left-align left-space-2x">Wie viele Personen haben an der Veranstaltung teilgenommen?</div>
+					<div data-type="select" style="font-size:16px;"
+						data-items='["weniger als 10","10 - 20","20 - 30","30 - 40","mehr als 40"]'	
+						id="select1"
+						class="cell left-align notransmit right-space-2x">
+					</div>
+				</div>
+				<div class="row">
+					<div data-type="label" style="font-size:16px;" class="cell-60 left-align left-space-2x">Wurde die am Thermostat eingestellte </br> Temperatur unter- oder überschritten?</div>
+					<div data-type="select" style="font-size:16px;"
+						data-items='["Nein","zwei Grad zu wenig","ein Grad zu wenig","ein Grad zu viel","zwei Grad zu viel"]'	
+						id="select2"
+						class="cell left-align notransmit right-space-2x">
+					</div>
+				</div>
+				<div class="row">
+					<div data-type="label" style="font-size:16px;" class="cell-60 left-align left-space-2x">Wie hast du die Raumtemperatur beim Betreten </br> des Raumes empfunden?</div>
+					<div data-type="select" style="font-size:16px;"
+						data-items='["genau richtig","viel zu kalt","ein wenig zu kalt","ein wenig zu warm","viel zu warm"]'
+						id="select3"
+						class="cell left-align notransmit right-space-2x">
+					</div>
+				</div>
+				<div class="row">
+					<div data-type="label" style="font-size:16px;" class="cell-60 left-align left-space-2x">Wie hast du die Raumtemperatur während </br> der Veranstaltung empfunden?</div>
+					<div data-type="select" style="font-size:16px;"
+						data-items='["genau richtig","viel zu kalt","ein wenig zu kalt","ein wenig zu warm","viel zu warm"]'
+						id="select4"
+						class="cell left-align notransmit right-space-2x">
+					</div>
+				</div>
+				<div class="row">
+					<div data-type="label" style="font-size:16px;" class="cell-60 left-align left-space-2x">Hast du die Raumluft beim Betreten </br> des Raumes als stickig empfunden?</div>
+					<div data-type="select" style="font-size:16px;"
+						data-items='["Nein","Ja"]'
+						id="select5"
+						class="cell left-align notransmit right-space-2x">
+					</div>
+				</div>
+				<div class="row">
+					<div data-type="label" style="font-size:16px;" class="cell-60 left-align left-space-2x">Hast du die Raumluft während der Veranstaltung </br> als stickig empfunden?</div>
+					<div data-type="select" style="font-size:16px;"
+						data-items='["Nein","Ja"]'	
+						id="select6"
+						class="cell left-align notransmit right-space-2x">
+					</div>
+				</div>
+				<div class="row center-align">
+					<button type="button" onClick="sendData()">absenden </button>
+				</div>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+</body>
+</html>	

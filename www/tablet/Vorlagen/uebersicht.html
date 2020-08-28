@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+	<div class="gridster">
+		<ul>
+			<li data-row="1" data-col="1" data-sizex="1" data-sizey="2" data-template="RaumNR/menu_RaumNR.html" class="buttom-space"> </li>
+			<li data-row="1" data-col="2" data-sizex="1" data-sizey="1">
+				<header>Heizungssteuerung</header>
+				<div class="row">				                    
+					<div data-type="label" class="big top-space">Thermostat</div>
+				</div>
+				<div class="row"> 
+					<div data-type="spinner" 
+						data-device="Sven_TemperaturManager_RaumNR"
+						data-get="sollTemp"
+						data-set="sollTemp"
+						data-icon-left-color="blue"
+						data-icon-right-color="red"
+						data-step="0.5"
+						data-min="17"
+						data-max="23"
+						data-width="auto"
+						data-unit="&deg;"
+						class="valueonly top-narrow-2x">
+					</div>
+				</div>
+									
+				<div class="row">
+					<div data-type="label" class="big top-space">Ventilöffnung</div>
+				</div>
+				<div class="row">
+					<div data-type="scale" 
+						data-device="Sven_TemperaturManager_RaumNR" 
+						data-get="ventil" 
+						data-font-size="20" 
+						class="big top-narrow">
+					</div>     
+				</div>
+			</li>
+			<li data-row="2" data-col="2" data-sizex="1" data-sizey="1"> 
+				<header>Fenstersteuerung</Header>
+				<div class="sheet">
+					<div class="row">
+						<div data-type="label" class="cell"> Fensterstatus</div>
+						<div data-type="switch"
+							data-device="Sven_FensterManager_RaumNR"
+							data-get="status"
+							data-get-on="offen"
+							data-get-off="geschlossen"
+							data-icon="oa-fts_window_1w_open"
+							class="cell readonly">						
+						</div>
+					</div>
+					<div class="row">
+						<div data-type="label" class="cell"> Fenstersteuerung</div>
+						<div data-type="switch"
+							data-device="Sven_FensterManager_RaumNR"
+							data-get="steuerung"
+							data-set="steuerung"
+							data-icon="oa-fts_window_1w_open"
+							data-set-on="offen"
+							data-set-off="geschlossen"
+							data-get-on="offen"
+							data-get-off="geschlossen"
+							class="cell">						
+						</div>
+					</div>
+					<div class="row">
+						<div data-type="label" class="cell"> nächste Raumlüftung</div>
+						<div data-type="label" data-device="LSF_Info_RaumNR" data-get="nachstePause"							
+							class="cell readonly">						
+						</div>
+					</div>
+				</div>
+			</li>
+			
+			<li data-row="1" data-col="3" data-sizex="3" data-sizey="1">
+				<header>Temperaturverlauf</header>
+					<div data-type="chart"
+						data-showlegend="true" 
+						data-legend='["Raumtemperatur","Thermostat"]' 
+						data-style='["ftui l5","ftui l4"]'
+						data-device='["Sven_TemperaturManager_RaumNR"]' 
+						data-logdevice='["Sven_TemperaturLog_RaumNR"]'
+						data-logfile='["CURRENT","CURRENT"]' 
+						data-columnspec='["4:temp","4:sollTemp"]'
+						data-ptype='["lines","lines"]'
+						data-minvalue="auto"
+						data-maxvalue="auto"
+						data-yticks="auto"
+						data-xticks="auto"
+						class="fullsize">
+					</div>											
+			</li>
+			
+			<li data-row="2" data-col="3" data-sizex="3" data-sizey="1">
+				<header>zeitliche Raumnutzung und Fensteröffnung</header>
+				<div data-type="chart"
+					data-showlegend="true" 
+					data-legend='["Fenster offen","Raum benutzt"]' 
+					data-device='["Sven_FensterManager_RaumNR","Sven_RaumManager_RaumNR"]'
+					data-logdevice='["Sven_FensterLog_RaumNR","Sven_RaumnutzungLog_RaumNR"]'
+					data-logfile='["CURRENT","CURRENT"]'
+					data-columnspec='["4:status.*::$fld[3]=~\"offen\"?0.8:0","4:inBenutzung.*::$fld[3]=~\"benutzt\"?1:0"]'
+					data-style='["ftui l2fill","ftui l6fill"]'
+					data-ptype='["steps","steps"]'
+					data-minvalue="0"
+					data-maxvalue="1.1"
+					data-yticks="1"
+					data-xticks="auto"
+					class = "fullsize">
+				</div>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>	

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+	<div class="gridster">
+		<ul>
+			<li data-row="1" data-col="1" data-sizex="1" data-sizey="6" data-template="RaumNR/menu_RaumNR.html"> </li>
+			<li data-row="1" data-col="2" data-sizex="4" data-sizey="2">
+				<header>Energieverbrauch heute</header>
+				<div data-type="chart"
+					data-showlegend="true" 
+					data-legend='["Energieverbrauch ohne SVEN","Energieverbrauch mit SVEN","Einsparung durch SVEN"]' 
+					data-style='["ftui l5","ftui l4","ftui l2"]'
+					data-device='["Sven_EnergieManager_RaumNR"]' 
+					data-logdevice="Sven_EnergieLog_RaumNR"
+					data-logfile="CURRENT" 
+					data-columnspec='["4:ohneSevenTag","4:verbrauchTag","4:einsparungTag"]'
+					data-minvalue="auto"
+					data-maxvalue="auto"
+					data-yticks="auto"
+					data-yunit=" kWh"
+					data-xticks="auto"
+					data-legendpos = '["left","top"]'
+					class="fullsize">								
+				</div>
+			</li>
+			<li data-row="3" data-col="2" data-sizex="4" data-sizey="2">
+				<header>Energieverbrauch diese Woche</header>
+				<div data-type="chart"
+					data-showlegend="true" 
+					data-legend='["Energieverbrauch ohne SVEN","Energieverbrauch mit SVEN","Einsparung durch SVEN"]' 
+					data-style='["ftui l5","ftui l4","ftui l2"]'
+					data-device='["Sven_EnergieManager_RaumNR"]' 
+					data-logdevice="Sven_EnergieLog_RaumNR"
+					data-logfile="CURRENT" 
+					data-columnspec='["4:ohneSevenWoche","4:verbrauchWoche","4:einsparungWoche"]'
+					data-minvalue="auto"
+					data-maxvalue="auto"
+					data-yunit=" kWh"
+					data-xticks="auto"
+					data-daysago_start = "0W"
+					data-daysago_end = "-1W"
+					data-legendpos = '["left","top"]'
+					class="fullsize nobuttons">								
+				</div>
+			</li>
+			<li data-row="5" data-col="2" data-sizex="4" data-sizey="2">
+				<header>Energieverbrauch diesen Monat</header>
+				<div class="row">
+				<div data-type="chart"
+					data-showlegend="true" 
+					data-legend='["Energieverbrauch ohne SVEN","Energieverbrauch mit SVEN","Einsparung durch SVEN"]' 
+					data-style='["ftui l5","ftui l4","ftui l2"]'
+					data-device='["Sven_EnergieManager_RaumNR"]' 
+					data-logdevice="Sven_EnergieLog_RaumNR"
+					data-logfile="CURRENT" 
+					data-columnspec='["4:ohneSevenMonat","4:verbrauchMonat","4:einsparungMonat"]'
+					data-minvalue="auto"
+					data-maxvalue="auto"
+					data-yunit=" kWh"
+					data-xticks="auto"
+					data-daysago_start = "0M"
+					data-daysago_end = "-1M"
+					data-legendpos = '["left","top"]'
+					class="fullsize nobuttons">								
+				</div>
+					<div data-type="label"
+					data-device="Sven_EnergieManager_RaumNR"
+					data-get="einsparungMonat"
+					data-factor="0.0733"
+					data-pre-text="Durch die Senkung des Energieverbrauchs hat die Hochschule diesen Monat "
+					data-post-text="€ eingespart."
+					data-refresh="10"
+					data-fix="2"
+					class="top-narrow-2x">
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>	

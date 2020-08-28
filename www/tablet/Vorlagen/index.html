@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script src="js/fhem-tablet-ui.js" defer></script>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/fhem-mobile-ui.css" /> 
+	
+	<meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="gridster_disable" content="1">
+	<meta name='toast' content='1'>
+    
+	<script language="javascript">
+		
+		function getRoomname() {
+			var ref = window.location.href;
+			var words = ref.split('#');
+			words = words[1].split('/');
+			var room = words[0];
+			return room;
+		}
+		function sendData() {
+			var room = getRoomname();
+			var xhr = new XMLHttpRequest();
+			var select1 = document.querySelector("#select1 select").selectedIndex;
+			var select2 = document.querySelector("#select2 select").selectedIndex;
+			var select3 = document.querySelector("#select3 select").selectedIndex;
+			var select4 = document.querySelector("#select4 select").selectedIndex;
+			var select5 = document.querySelector("#select5 select").selectedIndex;
+			var select6 = document.querySelector("#select6 select").selectedIndex;
+			xhr.open("GET", "http://sven.hs-harz.de/SvenDB/db.php?room=" +room+"&select1="+select1+"&select2="+select2+"&select3="+select3+"&select4="+select4+"&select5="+select5+"&select6="+select6, true);
+			//xhr.setRequestHeader("Access-Control-Allow-Origin","*");
+			xhr.send();
+			
+			xhr.onreadystatechange = function() {
+
+				 // Überprüfen ob der Server eine Antwort geliefert hat.
+				if (xhr.readyState == 4) {
+				 // Die Antwort des Servers ausgeben
+				  alert(xhr.responseText);
+				  document.querySelector("#select1 select").selectedIndex = 0;
+				  document.querySelector("#select2 select").selectedIndex = 0;
+				  document.querySelector("#select3 select").selectedIndex = 0;
+				  document.querySelector("#select4 select").selectedIndex = 0;
+				  document.querySelector("#select5 select").selectedIndex = 0;
+				  document.querySelector("#select6 select").selectedIndex = 0;
+				}
+			}
+		}
+	</script>
+	
+	<!-- <script src="js/my_jsfunctions.js" defer></script> -->
+    <!-- Remove this line to enable for usage with WebViewControl
+    <script defer>var wvcDevices = {'12345': 'Tablet'}; var wvcUserCssFile="webviewcontrol.css"</script>
+    <script src="../pgm2/cordova-2.3.0.js" defer></script>
+    <script src="../pgm2/webviewcontrol.js" defer></script>
+    <!-- End for WebViewControl -->
+    <title>FHEM-Tablet-UI</title>		
+</head>
+
+<body>
+	<ul>
+	<li data-row="1" data-col="1" data-sizex="1" data-sizey="4">
+		<div class="gridster">
+			<div class="sheet">
+			
+<div class='row'>
+<div data-type='pagetab'
+data-url='index.html'
+data-icon='fs-hue_room_frontdoor'
+class='cell'>
+</div>
+</div>
+<div class='row'>
+<div data-type='label' data-text-size='18'>
+
+</div>
+</div>
+
+<div class='row'>
+<div data-type='pagetab'
+data-url='9428/uebersicht_9428.html'
+data-icon='fs-hue_room_frontdoor'
+class='cell'>
+</div>
+</div>
+<div class='row'>
+<div data-type='label' data-text-size='18'>
+9428
+</div>
+</div>
+
+
+
+							<div class='row'> 
+
+							<div data-type='pagetab' 
+
+							data-url=test'/uebersicht_test.html' 
+
+							data-icon='fs-hue_room_frontdoor' 
+
+							class='cell'> 
+
+							</div> 
+
+							</div> 
+
+							<div class='row'> 
+
+							<div data-type='label' data-text-size='18'> 
+
+							test
+							</div> 
+
+							</div> 
+
+							<!-- weitere -->
+		</div>
+	 </li>
+	 </ul>
+</body>
+</html>	
